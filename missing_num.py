@@ -5,3 +5,8 @@ total_sum=n*(n+1)//2        # formul is n*(n+1)//2
 miss_c=total_sum-sum(s)
 print(total_sum)
 print(miss_c)
+
+
+
+
+
