@@ -1,13 +1,6 @@
 # check the number is prime or not
 
-# n=int(input("enter a number:"))
-# if n<=1:
-#     print("false")
-#     for i in range(n):
-#         if n%i==0:
-#             print("false")
-#         else:
-#             print("true")
+
 import math
 
 def is_prime(num):

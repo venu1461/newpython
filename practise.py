@@ -1,0 +1,208 @@
+# max element in the arrray
+# s=[2,4,6,7,4,9,10]
+# max=0
+# for i in range(len(s)):
+#     if s[i]>max:
+#         max=s[i]
+# print(max)
+
+
+# reverse a number
+
+# n=1234
+# rev=0
+# while(n!=0):
+#     temp=n % 10
+#     rev=rev*10 + temp
+#     n//=10
+# print(rev)
+
+
+# import math
+
+# def is_prime(num):
+#     if num <=1:
+#         return False 
+#     for i in range(2, int(math.isqrt(num))+1):
+#         if num % i == 0:
+#             return False 
+#     return True
+# num=int(input())
+# if is_prime(num):
+#     print(f" {num} is a prime ")
+# else:
+#     print(f" {num} is not prime")
+
+
+# s='a b b c d e'
+# word_count={}
+# for word in s .split():
+#     word_count[word]=word_count.get(word,0)+1
+# x=word_count[i] 
+# print(word_count)
+
+
+# def highest_frequency(n,arr):
+#     frequency={}
+#     for i in arr:
+#         if i in frequency:
+#             frequency[i]+=1
+#         else:
+#             frequency[i]=1
+#     max_freq=0
+#     item=" "
+#     for i in arr:
+#         if frequency[i]>max_freq:
+#             max_freq=frequency[i]
+#             item = i
+#     print(item)
+# n=int(input())
+# arr=input().split()
+# print(highest_frequency(n,arr))
+
+
+# def sum_xor(n,a):
+#     odd_sum=0
+#     xor_even=0
+
+#     for i in range(n):
+#         if (i%2==0):
+#             xor_even^=a[i]
+#         else:
+#             odd_sum+=a[i]
+#     return odd_sum -xor_even
+# n=int(input())
+# a=list(map(int,input("enter a number").split()))
+# result=sum_xor(n,a)
+# print(result)
+
+
+# import math
+# def is_prime(n):
+#     if n<=1:
+#         return False
+#     for i in range(2,int(math.isqrt(n))+1):
+#         if i%2 == 0:
+#             return False
+#     return True
+# n=int(input("number:"))
+# if is_prime(n):
+#     print("true")
+# else:
+#     print('false')
+
+# n=int(input("number"))
+# fact=1
+# if n <0:
+#     print("it is negative")
+# elif n == 0:
+#     print(f"the factorial of{n} is 1")
+# else:
+#     for i in range(1,n+1):
+#         fact=fact*i
+#     print(fact)
+
+
+# import random
+# num=random.random() # it is used for range between 0 and 1
+# num1=random.randint(1,100) # it is used in between range from n to n 
+# num2=random.randrange(0,100,2) # gives random number  in a range with incremental steps
+# num3=random.sample(range(1,100),5)  # gives a series of random numbers
+# print(num)
+# print(num1)
+# print(num2)
+# print(num3)
+
+# fibnoci series
+# n= int(input("enter a number"))
+# a=0
+# b=1
+# if n <1:
+#     print('null')
+# elif n == 1:
+#     print(a)
+# elif n == 2:
+#     print(a)
+#     print(b)
+# elif n >2:
+#     print(a)
+#     print(b)
+#     for i in range(n-2):
+#         c=a+b
+#         a,b=b,c
+#         print(c)
+      
+# def capital(string):
+#     return string.capitalize()
+# string='vENuGopalReddY'
+# s=capital(string)
+# print(s)
+
+
+# arr=[2,4,6,77]
+# value=77
+# x=arr.index(value)  to find index value
+# print(x)
+
+# l1=[1,2,3,5,6]
+# val=3
+# k=0
+# for i in range(len(l1)):
+#     if (l1[i]!=val):
+#         l1[k]=l1[i]
+#         k+=1
+# print(k)
+# print(l1[:k])
+
+
+# x=[1,2,3,4,5,6,4]
+# v=4
+# while v in x:
+#     x.remove(v)
+# print(x)
+#  # Initial array
+# nums = [3, 2, 2, 3]
+# val = 3
+
+# # Track index of where to place the next valid element
+# k = 0
+
+# # Loop through the array
+# for i in range(len(nums)):
+#     if nums[i] != val:
+#         nums[k] = nums[i]
+#         k += 1
+
+# # Result
+# print("Number of elements not equal to val:", k)
+# print("Modified array (first k elements):", nums[:k])
+       
+    
+
+# nums=[3,2,2,5,6,7,7,5,3]
+# target=7
+# k=0
+# for i in nums:
+#     if i != target:
+#         nums[k]=i
+#         k +=1
+# print(nums[:k])
+
+# nums=[1,3,4,5,3,2,1,2,3]
+# k=[]
+# for i in range(len(nums)):  # find the length of unique values in the list
+#     if i in k:
+#         k.remove(i)
+#     else:
+#         k.append(i)
+
+# print(len(k))
+
+import math
+def square(x):
+    if x<0:
+        return 0
+    else:
+        return math.floor(x**0.5)
+x=81
+print(square(x))
