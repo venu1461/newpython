@@ -198,11 +198,83 @@
 
 # print(len(k))
 
-import math
-def square(x):
-    if x<0:
-        return 0
-    else:
-        return math.floor(x**0.5)
-x=81
-print(square(x))
+# import math
+# def square(x):
+#     if x<0:
+#         return 0
+#     else:
+#         return math.floor(x**0.5)
+# x=81
+# print(square(x))
+
+# s="abcd"
+# t="abchde"
+# x=[]
+# for i in t:
+#     if i not in s:
+#         x.append(i)
+# print(''.join(x)) 
+# print(len(x))
+# # output he
+# # 2
+# def findTheDifference(s: str, t: str) -> str:
+#     result = 0
+#     for ch in s + t:
+#         result ^= ord(ch)
+#     return chr(result)
+# from collections import Counter
+
+# def findTheDifference(s: str, t: str) -> str:
+#     count_s = Counter(s)
+#     count_t = Counter(t)
+#     for ch in count_t:
+#         if count_t[ch] != count_s.get(ch, 0):
+#             return ch
+# def findTheDifference(s: str, t: str) -> str:
+#     s_sorted = sorted(s)
+#     t_sorted = sorted(t)
+#     for ch_s, ch_t in zip(s_sorted, t_sorted):
+#         if ch_s != ch_t:
+#             return ch_t
+#     return t_sorted[-1]
+
+# binary search
+# def binary_search(arr,left,right,target):
+#     if left >right:
+#         return False
+#     mid=(left+right)//2         binary search
+#     if target == arr[mid]:
+#         return mid
+#     elif target >arr[mid]:
+#         return binary_search(arr,mid+1,right,target)
+#     else:
+#         return binary_search(arr,left,mid-1,target)
+# arr=[1,3,5,7,9,10]  
+# result= binary_search(arr,0,len(arr)-1,7)        
+# print(result)
+
+# arr=[1,3,5,7,9,10]
+# target=7
+# for i in range(len(arr)):  linear search
+#     if arr[i]==target:
+#         print(i)
+#         break
+
+def next_greatest_letter(arr,left,right,target):
+    while left<=right:
+        mid=left+right//2
+        if arr[mid]<=target:
+            left=mid+1
+        else:
+            right=mid-1
+    return arr[left % len(arr)]
+arr=['c','f','j']
+print(next_greatest_letter(arr))
+
+
+
+
+
+
+
+          
