@@ -179,8 +179,16 @@
        
     
 
-# nums=[3,2,2,5,6,7,7,5,3]
-# target=7
+# nums=[3,2,2,5,5,5,5,6,7,7,5,3]
+# target=5
+# x=[]
+# target=5
+# for i in nums:
+#     if i == target:
+#         x.append(i)
+# print(len(x))
+
+
 # k=0
 # for i in nums:
 #     if i != target:
@@ -189,9 +197,11 @@
 # print(nums[:k])
 
 # nums=[1,3,4,5,3,2,1,2,3]
+# nums=set(nums)
+# print(len(nums))
 # k=[]
 # for i in range(len(nums)):  # find the length of unique values in the list
-#     if i in k:
+#     if i not in k:
 #         k.remove(i)
 #     else:
 #         k.append(i)
@@ -242,7 +252,7 @@
 # def binary_search(arr,left,right,target):
 #     if left >right:
 #         return False
-#     mid=(left+right)//2         binary search
+#     mid=(left+right)//2         #binary search
 #     if target == arr[mid]:
 #         return mid
 #     elif target >arr[mid]:
@@ -253,6 +263,11 @@
 # result= binary_search(arr,0,len(arr)-1,7)        
 # print(result)
 
+
+# @binary_search
+# def search(arr,target):
+#     return binary_search(arr,0,len(arr)-1,target)
+
 # arr=[1,3,5,7,9,10]
 # target=7
 # for i in range(len(arr)):  linear search
@@ -260,21 +275,105 @@
 #         print(i)
 #         break
 
-def next_greatest_letter(arr,left,right,target):
-    while left<=right:
-        mid=left+right//2
-        if arr[mid]<=target:
-            left=mid+1
-        else:
-            right=mid-1
-    return arr[left % len(arr)]
-arr=['c','f','j']
-print(next_greatest_letter(arr))
+# def next_greatest_letter(arr,left,right,target):
+#     while left<=right:
+#         mid=left+right//2
+#         if arr[mid]<=target:
+#             left=mid+1
+#         else:
+#             right=mid-1
+#     return arr[left % len(arr)]
+# arr=['c','f','j']
+# print(next_greatest_letter(arr))
+
+# matrix = [[1, 2], 
+#           [3, 4]]
+# matrix2=[[2,4],
+#         [4,5]]
+# rows=len(matrix)
+# col=len(matrix[0])
+# tran=[[0 for i in range(rows)] for j in range(col)]
+# for i in range(rows):
+#     for j in range(col):
+#         tran[i][j]=matrix[i][j] + matrix2[i][j]
+# print(matrix)
+# print(matrix2)
+# print(tran)
+
+# import pandas as pd
+# matrix =pd.DataFrame([[1,2],[3,4]])
+# trans=matrix.T
+# print(trans)
+
+# n=175
+# dis=0
+# temp=n
+# def find_position(data):
+#     str_data=str(data)
+#     return len(str_data)
+# while temp!=0:
+#     dis+=(temp%10)** find_position(temp)
+#     temp//=10# removing the last elemet
+# if dis==n:
+#     print("yes")
+# else:
+#     print("no")
 
 
 
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+# def mergeTwoLists(list1, list2):
+#     dummy = ListNode()
+#     tail = dummy
+
+#     while list1 and list2:
+#         if list1.val < list2.val:
+#             tail.next = list1
+#             list1 = list1.next
+#         else:
+#             tail.next = list2
+#             list2 = list2.next
+#         tail = tail.next
+
+#     tail.next = list1 if list1 else list2
+#     return dummy.next
+
+# sol=Solution()
+# list1 = [1,2,4]
+# list2 = [1,3,4]
+# print(sol.mergeTwoLists(list1,list2))
+
+# def extra_sum(func):
+#     def inner(x):
+#         if x==x[::-1]:
+#             print('Truee')
+#         else:
+#             print('nothing')
+#     return inner
+# @extra_sum
+# def sum(a):
+#     print(a)
+# sum('120')
 
 
+# multiple decorators and single function
+def upper_d(func):
+    def inner():
+        str1= func()
+        return str1.upper()
+    return inner
+def split_d(func):
+    def wrapper():
+        str2= func()
+        return str2.split()
+    return wrapper
 
-
-          
+@split_d
+@upper_d
+def process():
+    return 'good morning'
+print(process())
